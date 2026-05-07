@@ -8,7 +8,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 function initApp() {
     AppState.fpDate = flatpickr("#f-date", {
-        altInput: true, altFormat: "d M Y", dateFormat: "Y-m-d", defaultDate: "today", maxDate: "today"
+        altInput: true, altFormat: "d M Y", dateFormat: "Y-m-d", defaultDate: "today", maxDate: "today",
+        clickOpens: false, onReady: function(_, __, fp) { fp.altInput.disabled = true; }
     });
 
     AppState.fpNextDate = flatpickr("#f-next-date", {
